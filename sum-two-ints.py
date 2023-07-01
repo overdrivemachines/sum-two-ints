@@ -20,5 +20,15 @@ def twoNumberSum(array, targetSum):
     return result
 
 
-a = [5, 1, 4, 3, 21]
-print(twoNumberSum(a, 9))
+def twoNumberSum2(array, targetSum):
+    prev_values = set()
+    for i, num in enumerate(array):
+        diff = targetSum - num
+        if diff in prev_values:
+            return [diff, num]
+        prev_values.add(num)
+    return
+
+
+a = [5, 1, -4, 8, 21]
+print(twoNumberSum2(a, 9))
